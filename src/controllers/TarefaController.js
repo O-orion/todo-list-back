@@ -27,3 +27,5 @@ class TarefaController {
     }
 
 }
+
+module.exports = TarefaController;
