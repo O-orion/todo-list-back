@@ -20,7 +20,19 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'tarefa',
-    tableName: 'tarefas'
+    tableName: 'tarefas',
+    scopes: {
+      'tarefasConcluidas': {
+        where: {
+          status: 'concluido'
+        }
+      },
+      'tarefasPendentes': {
+        where: {
+          status: 'pendente'
+        }
+      }
+    }
   });
   return tarefa;
 };

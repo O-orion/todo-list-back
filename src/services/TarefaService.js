@@ -17,6 +17,16 @@ class TarefaService {
         return tarefaCriada;
     }
 
+    async tarefasConcluidas() {
+        const tarefasConcluidas = database.tarefa.scope('tarefasConcluidas').findAll();
+        return tarefasConcluidas;
+    }
+
+    async tarefasPendentes() {
+        const tarefasPendentes = database.tarefa.scope('tarefasPendentes').findAll();
+        return tarefasPendentes;
+    }
+
 }
 
 module.exports = TarefaService
